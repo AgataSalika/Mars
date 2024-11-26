@@ -1,0 +1,588 @@
+/* FONT*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap");
+
+
+:root {
+    --main-font-color: #FFFFFF;
+    --second-font-color: #000;
+    --h1-font-size: 11.25rem;
+    --h2-font-size: 3.75rem;
+    --h3-font-size: 1.875rem;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Gputeks';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/font/Gputeks-Regular.woff') format('woff');
+}
+
+
+/*=============== REUSABLE===============*/
+* {
+    font-family: Gputeks;
+}
+
+.title {
+    font-size: var(--h2-font-size);
+    color: var(--main-font-color);
+}
+
+.main__button {
+    width: 440px;
+    height: 100px;
+    color: var(--main-font-color);
+    font-size: var(--h3-font-size);
+    line-height: 50px;
+    text-align: center;
+    background: linear-gradient(90deg, #FFB762 0%, #CF54A5 27.6%, #263B6C 73.96%, #FFB762 100%);
+    background-size: 300%;
+    animation: buttonMove 6s linear 0s infinite;
+    
+}
+
+@keyframes buttonMove {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 300%;
+    }
+}
+
+/*=============== HEADER===============*/
+.header {
+    overflow: hidden;
+}
+
+.menu__wrapper {
+    display: flex;
+    height: calc(100vh - 162px);
+    width: 138px;
+    position: fixed;
+    right: 0;
+    top: 81px;
+    padding: 50px 0px 50px 32px;
+    background-color: #3E4761;
+    color: var(--main-font-color);
+    z-index: 100;
+    transition: 0.5s;
+
+}
+
+.menu__wrapper:hover {
+    width: 430px;
+    padding: 50px 0px 50px 0px;
+}
+
+.nav__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 138px;
+
+}
+
+.nav__text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    padding-top: 110px;
+    font-size: 15px;
+
+}
+
+.nav__right {
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+    padding-top: 188px;
+    margin-left: 32px;
+}
+
+.nav__right a {
+    font-size: var(--h3-font-size);
+}
+.nav__link{
+    filter: blur(10px);
+    transition: 0.5s;
+}
+
+.nav__link:hover{
+    filter: blur(0px);
+    
+}
+.hero {
+    color: var(--main-font-color);
+    background-color: #222735;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 0 74px;
+}
+
+.hero__content_title {
+    font-size: var(--h1-font-size);
+}
+
+
+
+.hero__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+.hero__content_subtitle {
+    font-size: var(--h2-font-size);
+}
+
+.hero__planet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.hero__rocket {
+    position: absolute;
+    top: 400px;
+    left: -300px;
+    animation-name: rocketFly;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rocketFly {
+    0% {
+        top: 400px;
+        left: -300px;
+    }
+
+    50% {
+        top: 50px;
+        left: 700px;
+    }
+
+    100% {
+        top: 400px;
+        left: 800px;
+    }
+}
+
+/*=============== ABOUT===============*/
+.about {
+    padding: 108px 74px;
+    color: var(--main-font-color);
+    background: linear-gradient(0.00deg, rgb(43, 52, 75), rgb(33, 38, 51) 100%);
+}
+
+.about__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__left {
+    margin-right: 240px;
+    position: relative;
+}
+
+.about__right{
+    padding-right: 140px;
+}
+
+.about__planet {
+    position: relative;
+    z-index: 100;
+}
+
+.eye {
+    position: absolute;
+    left: 170px;
+    top: 290px;
+    background: url('/img/section-2-alien.svg') center/cover no-repeat;
+    width: 155px;
+    height: 197px;
+    animation: moveUpDown 4s linear infinite alternate;
+}
+
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(100%);
+        /* Начальное и конечное положение */
+    }
+
+    100% {
+        transform: translateY(0%);
+        /* Поднимаем элемент на 20 пикселей */
+    }
+}
+
+/* .about__alien {
+    position: absolute;
+    left: 170px;
+    top: 290px;
+    
+} */
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(100%);
+        /* Начальное и конечное положение */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Двигаем элемент на 20 пикселей вправо */
+    }
+}
+
+.about__alien_eye {
+    position: absolute;
+    top: 68px;
+    left: 70px;
+    animation: moveLeftRight 1s linear infinite alternate;
+}
+
+.about__right {
+    width: 888px;
+}
+
+.about__text {
+    margin-top: 74px;
+    font-size: var(--h3-font-size);
+}
+
+/*=============== PEOPLE===============*/
+.people {
+    position: relative;
+    color: var(--main-font-color);
+    background: linear-gradient(0.00deg, rgb(43, 52, 75), rgb(33, 38, 51) 100%);
+}
+
+.people__container {
+    position: relative;
+    display: flex;
+    gap: 10%;
+    margin-top: 60px;
+}
+
+.people__content {
+    padding: 40px 138px 40px 74px;
+
+}
+
+.people__contaier_left {
+    width: 30%;
+}
+
+.people__text {
+    font-size: var(--h3-font-size);
+    width: 75%;
+    margin-top: 60px;
+}
+
+.people__contaier_right {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.people__bg {
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+}
+
+.rover {
+    position: absolute;
+    right: 400px;
+    bottom: 95px;
+    height: 70%;
+    animation: roverMove 6s linear infinite alternate;
+}
+
+@keyframes roverMove {
+    0% {
+        right: 50%;
+        transform: rotateY(0);
+    }
+
+    20% {
+        right: 10%;
+        transform: rotateY(0);
+    }
+
+    40% {
+        right: -30%;
+        transform: rotateY(180deg);
+    }
+
+    60% {
+        right: 30%;
+        transform: rotateY(180deg);
+    }
+
+    80% {
+        right: 50%;
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        right: -100%;
+        transform: rotateY(180deg);
+    }
+}
+
+.alien {
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+    height: 70%;
+    animation: alienMove 4s linear infinite alternate;
+    animation-delay: 2s;
+}
+
+@keyframes alienMove {
+    0% {
+        left: -50%;
+    }
+
+    60% {
+        left: 0%;
+    }
+
+    80% {
+        left: 10%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+
+.img__bg {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/*=============== SATELLITE===============*/
+.sat {
+    width: 100vw;
+    height: 100vh;
+    min-height: 1020px;
+    padding: 79px 74px;
+    color: var(--main-font-color);
+    background: #FFB762;
+    text-align: center;
+    color: #000;
+}
+
+.sat__title {
+    color: #000;
+}
+
+.sat__text {
+    font-size: var(--h3-font-size);
+}
+
+.sat__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orbit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 617px;
+    height: 617px;
+    margin-top: 100px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    animation: OrbitMove 10s linear 0s infinite;
+
+}
+
+@keyframes OrbitMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit__img {
+    animation: satelliteMove 10s linear 0s infinite;
+}
+
+.satellites {}
+
+.phobos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 200px;
+    left: -50px;
+    animation: satelliteMove 10s linear 0s infinite;
+}
+
+@keyframes satelliteMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+.deimos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    animation: satelliteMove 10s linear 0s infinite;
+}
+
+
+
+/*=============== SECOND===============*/
+.second {
+    width: 100vw;
+    height: 1920px;
+    background: #293246;
+    position: relative;
+}
+
+.second__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    padding: 0px 138px 0px 74px;
+}
+
+.secondbtn {
+    width: 927px;
+    margin: 0 auto;
+}
+
+.secondtitle {
+    margin-bottom: 10%;
+}
+
+.second__top {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.second__bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.second__rocket {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    animation: secondRocketMove 10s linear 0s infinite alternate;
+}
+
+.secondtitle {
+    width: 65%;
+}
+
+
+@keyframes secondRocketMove {
+    0% {
+        transform: rotate(0deg);
+        top: 0;
+        left: 70%;
+    }
+
+    33% {
+        transform: rotate(120deg);
+        top: 20%;
+        left: 80%;
+    }
+
+    66% {
+        transform: rotate(0deg);
+        top: 40%;
+        left: 70%;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        top: 90%;
+        left: 70%;
+    }
+}
+
+
+
+/*=============== FOOTER===============*/
+footer {
+    background: #FFB876;
+    height: 100px;
+}
+/*=============== RESPONSE===============*/
+
+@media screen and (max-width:1150px) {
+    .about__left{
+        margin-right: 40px;
+    }
+    .secondbtn{
+        width: 800px;
+    }
+}
+
+@media screen and (max-height:850px) {
+    .menu__wrapper{
+        height: calc(100vh - 40px);
+        top: 20px;
+    }
+    
+
+}

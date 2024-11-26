@@ -16,7 +16,7 @@
     font-family: 'Gputeks';
     font-style: normal;
     font-weight: 500;
-    src: url('/font/Gputeks-Regular.woff') format('woff');
+    src: url('./font/Gputeks-Regular.woff') format('woff');
 }
 
 
